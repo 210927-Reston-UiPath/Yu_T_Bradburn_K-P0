@@ -1,4 +1,4 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="AddClient" mva:VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="736,4389.33333333333" sap2010:WorkflowViewState.IdRef="AddClient_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="AddClient" mva:VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="736,4530" sap2010:WorkflowViewState.IdRef="AddClient_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="30">
       <x:String>System.Activities</x:String>
@@ -63,7 +63,7 @@
       <AssemblyReference>System.ServiceModel</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="AddClient" sap:VirtualizedContainerService.HintSize="636.666666666667,4324.66666666667" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="AddClient" sap:VirtualizedContainerService.HintSize="639.333333333333,4465.33333333333" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:String" Name="inputOption" />
       <Variable x:TypeArguments="x:Boolean" Name="repeat" />
@@ -73,7 +73,7 @@
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <Assign sap:VirtualizedContainerService.HintSize="594.666666666667,62" sap2010:WorkflowViewState.IdRef="Assign_1">
+    <Assign sap:VirtualizedContainerService.HintSize="597.333333333333,61.3333333333333" sap2010:WorkflowViewState.IdRef="Assign_1">
       <Assign.To>
         <OutArgument x:TypeArguments="x:Boolean">[repeat]</OutArgument>
       </Assign.To>
@@ -81,9 +81,9 @@
         <InArgument x:TypeArguments="x:Boolean">True</InArgument>
       </Assign.Value>
     </Assign>
-    <ui:InterruptibleDoWhile DisplayName="Do While" sap:VirtualizedContainerService.HintSize="594.666666666667,4130.66666666667" sap2010:WorkflowViewState.IdRef="InterruptibleDoWhile_1">
+    <ui:InterruptibleDoWhile DisplayName="Do While" sap:VirtualizedContainerService.HintSize="597.333333333333,4272" sap2010:WorkflowViewState.IdRef="InterruptibleDoWhile_1">
       <ui:InterruptibleDoWhile.Body>
-        <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="558,3961.33333333333" sap2010:WorkflowViewState.IdRef="Sequence_2">
+        <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="560.666666666667,4104" sap2010:WorkflowViewState.IdRef="Sequence_2">
           <Sequence.Variables>
             <Variable x:TypeArguments="sd:DataTable" Name="clientDT" />
           </Sequence.Variables>
@@ -92,7 +92,7 @@
               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
-          <ui:InputDialog Options="{x:Null}" DisplayName="Input Dialog" sap:VirtualizedContainerService.HintSize="516,299.333333333333" sap2010:WorkflowViewState.IdRef="InputDialog_1" IsPassword="False" Label="Add Client or Exit" OptionsString="Add Client;Exit">
+          <ui:InputDialog Options="{x:Null}" DisplayName="Input Dialog" sap:VirtualizedContainerService.HintSize="518.666666666667,296" sap2010:WorkflowViewState.IdRef="InputDialog_1" IsPassword="False" Label="Add Client or Exit" OptionsString="Add Client;Exit">
             <ui:InputDialog.Result>
               <OutArgument x:TypeArguments="x:String">[inputOption]</OutArgument>
             </ui:InputDialog.Result>
@@ -102,8 +102,8 @@
               </InArgument>
             </ui:InputDialog.Title>
           </ui:InputDialog>
-          <Switch x:TypeArguments="x:String" DisplayName="Switch" Expression="[inputOption]" sap:VirtualizedContainerService.HintSize="516,3530" sap2010:WorkflowViewState.IdRef="Switch`1_2">
-            <Sequence x:Key="Add Client" sap:VirtualizedContainerService.HintSize="476,3295.33333333333" sap2010:WorkflowViewState.IdRef="Sequence_3">
+          <Switch x:TypeArguments="x:String" DisplayName="Switch" Expression="[inputOption]" sap:VirtualizedContainerService.HintSize="518.666666666667,3676" sap2010:WorkflowViewState.IdRef="Switch`1_2">
+            <Sequence x:Key="Add Client" sap:VirtualizedContainerService.HintSize="478.666666666667,3444.66666666667" sap2010:WorkflowViewState.IdRef="Sequence_3">
               <Sequence.Variables>
                 <Variable x:TypeArguments="x:String" Name="customerName" />
                 <Variable x:TypeArguments="x:String" Name="item1" />
@@ -123,7 +123,7 @@
                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
-              <ui:InputDialog Options="{x:Null}" OptionsString="{x:Null}" sap:VirtualizedContainerService.HintSize="434,244.666666666667" sap2010:WorkflowViewState.IdRef="InputDialog_2" IsPassword="False" Label="Input Customer Name: ">
+              <ui:InputDialog Options="{x:Null}" OptionsString="{x:Null}" sap:VirtualizedContainerService.HintSize="436.666666666667,242" sap2010:WorkflowViewState.IdRef="InputDialog_2" IsPassword="False" Label="Input Customer Name: ">
                 <ui:InputDialog.Result>
                   <OutArgument x:TypeArguments="x:String">[customerName]</OutArgument>
                 </ui:InputDialog.Result>
@@ -133,7 +133,7 @@
                   </InArgument>
                 </ui:InputDialog.Title>
               </ui:InputDialog>
-              <ui:InputDialog Options="{x:Null}" OptionsString="{x:Null}" DisplayName="Input Dialog" sap:VirtualizedContainerService.HintSize="434,244.666666666667" sap2010:WorkflowViewState.IdRef="InputDialog_9" IsPassword="False" Label="Input Customer Email: ">
+              <ui:InputDialog Options="{x:Null}" OptionsString="{x:Null}" DisplayName="Input Dialog" sap:VirtualizedContainerService.HintSize="436.666666666667,242" sap2010:WorkflowViewState.IdRef="InputDialog_9" IsPassword="False" Label="Input Customer Email: ">
                 <ui:InputDialog.Result>
                   <OutArgument x:TypeArguments="x:String">[customerEmail]</OutArgument>
                 </ui:InputDialog.Result>
@@ -143,7 +143,7 @@
                   </InArgument>
                 </ui:InputDialog.Title>
               </ui:InputDialog>
-              <ui:InputDialog Options="{x:Null}" OptionsString="{x:Null}" DisplayName="Input Dialog" sap:VirtualizedContainerService.HintSize="434,244.666666666667" sap2010:WorkflowViewState.IdRef="InputDialog_3" IsPassword="False" Label="Input Item 1: ">
+              <ui:InputDialog Options="{x:Null}" OptionsString="{x:Null}" DisplayName="Input Dialog" sap:VirtualizedContainerService.HintSize="436.666666666667,242" sap2010:WorkflowViewState.IdRef="InputDialog_3" IsPassword="False" Label="Input Item 1: ">
                 <ui:InputDialog.Result>
                   <OutArgument x:TypeArguments="x:String">[item1]</OutArgument>
                 </ui:InputDialog.Result>
@@ -153,7 +153,7 @@
                   </InArgument>
                 </ui:InputDialog.Title>
               </ui:InputDialog>
-              <ui:InputDialog Options="{x:Null}" OptionsString="{x:Null}" DisplayName="Input Dialog" sap:VirtualizedContainerService.HintSize="434,244.666666666667" sap2010:WorkflowViewState.IdRef="InputDialog_4" IsPassword="False" Label="Input Quantity for Item 1: ">
+              <ui:InputDialog Options="{x:Null}" OptionsString="{x:Null}" DisplayName="Input Dialog" sap:VirtualizedContainerService.HintSize="436.666666666667,242" sap2010:WorkflowViewState.IdRef="InputDialog_4" IsPassword="False" Label="Input Quantity for Item 1: ">
                 <ui:InputDialog.Result>
                   <OutArgument x:TypeArguments="x:Int32">[quantity1]</OutArgument>
                 </ui:InputDialog.Result>
@@ -163,7 +163,7 @@
                   </InArgument>
                 </ui:InputDialog.Title>
               </ui:InputDialog>
-              <ui:InputDialog Options="{x:Null}" OptionsString="{x:Null}" DisplayName="Input Dialog" sap:VirtualizedContainerService.HintSize="434,244.666666666667" sap2010:WorkflowViewState.IdRef="InputDialog_5" IsPassword="False" Label="Input Item 2: ">
+              <ui:InputDialog Options="{x:Null}" OptionsString="{x:Null}" DisplayName="Input Dialog" sap:VirtualizedContainerService.HintSize="436.666666666667,242" sap2010:WorkflowViewState.IdRef="InputDialog_5" IsPassword="False" Label="Input Item 2: ">
                 <ui:InputDialog.Result>
                   <OutArgument x:TypeArguments="x:String">[item2]</OutArgument>
                 </ui:InputDialog.Result>
@@ -173,7 +173,7 @@
                   </InArgument>
                 </ui:InputDialog.Title>
               </ui:InputDialog>
-              <ui:InputDialog Options="{x:Null}" OptionsString="{x:Null}" DisplayName="Input Dialog" sap:VirtualizedContainerService.HintSize="434,244.666666666667" sap2010:WorkflowViewState.IdRef="InputDialog_6" IsPassword="False" Label="Input Quantity for Item 2: ">
+              <ui:InputDialog Options="{x:Null}" OptionsString="{x:Null}" DisplayName="Input Dialog" sap:VirtualizedContainerService.HintSize="436.666666666667,242" sap2010:WorkflowViewState.IdRef="InputDialog_6" IsPassword="False" Label="Input Quantity for Item 2: ">
                 <ui:InputDialog.Result>
                   <OutArgument x:TypeArguments="x:Int32">[quantity2]</OutArgument>
                 </ui:InputDialog.Result>
@@ -183,7 +183,7 @@
                   </InArgument>
                 </ui:InputDialog.Title>
               </ui:InputDialog>
-              <ui:InputDialog Options="{x:Null}" OptionsString="{x:Null}" DisplayName="Input Dialog" sap:VirtualizedContainerService.HintSize="434,244.666666666667" sap2010:WorkflowViewState.IdRef="InputDialog_7" IsPassword="False" Label="Input Item 3: ">
+              <ui:InputDialog Options="{x:Null}" OptionsString="{x:Null}" DisplayName="Input Dialog" sap:VirtualizedContainerService.HintSize="436.666666666667,242" sap2010:WorkflowViewState.IdRef="InputDialog_7" IsPassword="False" Label="Input Item 3: ">
                 <ui:InputDialog.Result>
                   <OutArgument x:TypeArguments="x:String">[item3]</OutArgument>
                 </ui:InputDialog.Result>
@@ -193,7 +193,7 @@
                   </InArgument>
                 </ui:InputDialog.Title>
               </ui:InputDialog>
-              <ui:InputDialog Options="{x:Null}" OptionsString="{x:Null}" DisplayName="Input Dialog" sap:VirtualizedContainerService.HintSize="434,244.666666666667" sap2010:WorkflowViewState.IdRef="InputDialog_8" IsPassword="False" Label="Input Quantity for Item 3: ">
+              <ui:InputDialog Options="{x:Null}" OptionsString="{x:Null}" DisplayName="Input Dialog" sap:VirtualizedContainerService.HintSize="436.666666666667,242" sap2010:WorkflowViewState.IdRef="InputDialog_8" IsPassword="False" Label="Input Quantity for Item 3: ">
                 <ui:InputDialog.Result>
                   <OutArgument x:TypeArguments="x:Int32">[quantity3]</OutArgument>
                 </ui:InputDialog.Result>
@@ -203,36 +203,47 @@
                   </InArgument>
                 </ui:InputDialog.Title>
               </ui:InputDialog>
-              <ui:MultipleAssign DisplayName="Multiple Assign" sap:VirtualizedContainerService.HintSize="434,128" sap2010:WorkflowViewState.IdRef="MultipleAssign_1">
-                <ui:MultipleAssign.AssignOperations>
-                  <scg:List x:TypeArguments="ui:AssignOperation" Capacity="4">
-                    <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_1">
-                      <ui:AssignOperation.To>
-                        <OutArgument x:TypeArguments="x:String">[quantityName]</OutArgument>
-                      </ui:AssignOperation.To>
-                      <ui:AssignOperation.Value>
-                        <InArgument x:TypeArguments="x:String">Quantity</InArgument>
-                      </ui:AssignOperation.Value>
-                    </ui:AssignOperation>
-                    <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_2">
-                      <ui:AssignOperation.To>
-                        <OutArgument x:TypeArguments="x:Int32">[orderNumber]</OutArgument>
-                      </ui:AssignOperation.To>
-                      <ui:AssignOperation.Value>
-                        <InArgument x:TypeArguments="x:Int32">4</InArgument>
-                      </ui:AssignOperation.Value>
-                    </ui:AssignOperation>
-                  </scg:List>
-                </ui:MultipleAssign.AssignOperations>
-              </ui:MultipleAssign>
-              <ui:BuildDataTable DataTable="[testDT]" DisplayName="Build Data Table" sap:VirtualizedContainerService.HintSize="434,58.6666666666667" sap2010:WorkflowViewState.IdRef="BuildDataTable_1" TableInfo="&lt;NewDataSet&gt;&#xD;&#xA;  &lt;xs:schema id=&quot;NewDataSet&quot; xmlns=&quot;&quot; xmlns:xs=&quot;http://www.w3.org/2001/XMLSchema&quot; xmlns:msdata=&quot;urn:schemas-microsoft-com:xml-msdata&quot;&gt;&#xD;&#xA;    &lt;xs:element name=&quot;NewDataSet&quot; msdata:IsDataSet=&quot;true&quot; msdata:MainDataTable=&quot;TableName&quot; msdata:UseCurrentLocale=&quot;true&quot;&gt;&#xD;&#xA;      &lt;xs:complexType&gt;&#xD;&#xA;        &lt;xs:choice minOccurs=&quot;0&quot; maxOccurs=&quot;unbounded&quot;&gt;&#xD;&#xA;          &lt;xs:element name=&quot;TableName&quot;&gt;&#xD;&#xA;            &lt;xs:complexType&gt;&#xD;&#xA;              &lt;xs:sequence&gt;&#xD;&#xA;                &lt;xs:element name=&quot;name&quot; msdata:Caption=&quot;&quot; minOccurs=&quot;0&quot;&gt;&#xD;&#xA;                  &lt;xs:simpleType&gt;&#xD;&#xA;                    &lt;xs:restriction base=&quot;xs:string&quot;&gt;&#xD;&#xA;                      &lt;xs:maxLength value=&quot;100&quot; /&gt;&#xD;&#xA;                    &lt;/xs:restriction&gt;&#xD;&#xA;                  &lt;/xs:simpleType&gt;&#xD;&#xA;                &lt;/xs:element&gt;&#xD;&#xA;                &lt;xs:element name=&quot;item&quot; msdata:Caption=&quot;&quot; type=&quot;xs:int&quot; minOccurs=&quot;0&quot; /&gt;&#xD;&#xA;                &lt;xs:element name=&quot;Quantity&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xD;&#xA;              &lt;/xs:sequence&gt;&#xD;&#xA;            &lt;/xs:complexType&gt;&#xD;&#xA;          &lt;/xs:element&gt;&#xD;&#xA;        &lt;/xs:choice&gt;&#xD;&#xA;      &lt;/xs:complexType&gt;&#xD;&#xA;    &lt;/xs:element&gt;&#xD;&#xA;  &lt;/xs:schema&gt;&#xD;&#xA;&lt;/NewDataSet&gt;" />
-              <ui:AddDataRow DataRow="{x:Null}" ArrayRow="[{customerName}]" DataTable="[testDT]" DisplayName="name -Add Data Row" sap:VirtualizedContainerService.HintSize="434,22" sap2010:WorkflowViewState.IdRef="AddDataRow_1" />
-              <ui:AddDataRow DataRow="{x:Null}" ArrayRow="[{customerEmail}]" DataTable="[testDT]" DisplayName="email - Add Data Row" sap:VirtualizedContainerService.HintSize="434,22" sap2010:WorkflowViewState.IdRef="AddDataRow_2" />
-              <ui:AddDataRow DataRow="{x:Null}" ArrayRow="[{}]" DataTable="[testDT]" DisplayName="add space -Add Data Row" sap:VirtualizedContainerService.HintSize="434,22" sap2010:WorkflowViewState.IdRef="AddDataRow_7" />
-              <ui:AddDataRow DataRow="{x:Null}" ArrayRow="[{item1,quantity1}]" DataTable="[testDT]" DisplayName="item1/q1 - Add Data Row" sap:VirtualizedContainerService.HintSize="434,22" sap2010:WorkflowViewState.IdRef="AddDataRow_3" />
-              <ui:AddDataRow DataRow="{x:Null}" ArrayRow="[{item2,quantity2}]" DataTable="[testDT]" DisplayName="item2/q2 - Add Data Row" sap:VirtualizedContainerService.HintSize="434,22" sap2010:WorkflowViewState.IdRef="AddDataRow_4" />
-              <ui:AddDataRow DataRow="{x:Null}" ArrayRow="[{item3,quantity3}]" DataTable="[testDT]" DisplayName="item3/q3 - Add Data Row" sap:VirtualizedContainerService.HintSize="434,22" sap2010:WorkflowViewState.IdRef="AddDataRow_5" />
-              <ui:ExcelApplicationScope Password="{x:Null}" DisplayName="Excel Application Scope" sap:VirtualizedContainerService.HintSize="434,287.333333333333" sap2010:WorkflowViewState.IdRef="ExcelApplicationScope_1" InstanceCachePeriod="3000" WorkbookPath="C:\Users\mainuser\Desktop\Revature\Yu_Timothy_Bradburn_Kenneth_P0\P0 source datasheet.xlsx">
+              <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="436.666666666667,298.666666666667" sap2010:WorkflowViewState.IdRef="CommentOut_3">
+                <ui:CommentOut.Body>
+                  <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="376,220" sap2010:WorkflowViewState.IdRef="Sequence_7">
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                    <ui:MultipleAssign DisplayName="Multiple Assign" sap:VirtualizedContainerService.HintSize="334,128" sap2010:WorkflowViewState.IdRef="MultipleAssign_1">
+                      <ui:MultipleAssign.AssignOperations>
+                        <scg:List x:TypeArguments="ui:AssignOperation" Capacity="4">
+                          <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_1">
+                            <ui:AssignOperation.To>
+                              <OutArgument x:TypeArguments="x:String">[quantityName]</OutArgument>
+                            </ui:AssignOperation.To>
+                            <ui:AssignOperation.Value>
+                              <InArgument x:TypeArguments="x:String">Quantity</InArgument>
+                            </ui:AssignOperation.Value>
+                          </ui:AssignOperation>
+                          <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_2">
+                            <ui:AssignOperation.To>
+                              <OutArgument x:TypeArguments="x:Int32">[orderNumber]</OutArgument>
+                            </ui:AssignOperation.To>
+                            <ui:AssignOperation.Value>
+                              <InArgument x:TypeArguments="x:Int32">4</InArgument>
+                            </ui:AssignOperation.Value>
+                          </ui:AssignOperation>
+                        </scg:List>
+                      </ui:MultipleAssign.AssignOperations>
+                    </ui:MultipleAssign>
+                  </Sequence>
+                </ui:CommentOut.Body>
+              </ui:CommentOut>
+              <ui:BuildDataTable DataTable="[testDT]" DisplayName="Build Data Table" sap:VirtualizedContainerService.HintSize="436.666666666667,58.6666666666667" sap2010:WorkflowViewState.IdRef="BuildDataTable_1" TableInfo="&lt;NewDataSet&gt;&#xD;&#xA;  &lt;xs:schema id=&quot;NewDataSet&quot; xmlns=&quot;&quot; xmlns:xs=&quot;http://www.w3.org/2001/XMLSchema&quot; xmlns:msdata=&quot;urn:schemas-microsoft-com:xml-msdata&quot;&gt;&#xD;&#xA;    &lt;xs:element name=&quot;NewDataSet&quot; msdata:IsDataSet=&quot;true&quot; msdata:MainDataTable=&quot;TableName&quot; msdata:UseCurrentLocale=&quot;true&quot;&gt;&#xD;&#xA;      &lt;xs:complexType&gt;&#xD;&#xA;        &lt;xs:choice minOccurs=&quot;0&quot; maxOccurs=&quot;unbounded&quot;&gt;&#xD;&#xA;          &lt;xs:element name=&quot;TableName&quot;&gt;&#xD;&#xA;            &lt;xs:complexType&gt;&#xD;&#xA;              &lt;xs:sequence&gt;&#xD;&#xA;                &lt;xs:element name=&quot;name&quot; msdata:Caption=&quot;&quot; minOccurs=&quot;0&quot;&gt;&#xD;&#xA;                  &lt;xs:simpleType&gt;&#xD;&#xA;                    &lt;xs:restriction base=&quot;xs:string&quot;&gt;&#xD;&#xA;                      &lt;xs:maxLength value=&quot;100&quot; /&gt;&#xD;&#xA;                    &lt;/xs:restriction&gt;&#xD;&#xA;                  &lt;/xs:simpleType&gt;&#xD;&#xA;                &lt;/xs:element&gt;&#xD;&#xA;                &lt;xs:element name=&quot;item&quot; msdata:Caption=&quot;&quot; type=&quot;xs:int&quot; minOccurs=&quot;0&quot; /&gt;&#xD;&#xA;                &lt;xs:element name=&quot;Quantity&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xD;&#xA;              &lt;/xs:sequence&gt;&#xD;&#xA;            &lt;/xs:complexType&gt;&#xD;&#xA;          &lt;/xs:element&gt;&#xD;&#xA;        &lt;/xs:choice&gt;&#xD;&#xA;      &lt;/xs:complexType&gt;&#xD;&#xA;    &lt;/xs:element&gt;&#xD;&#xA;  &lt;/xs:schema&gt;&#xD;&#xA;&lt;/NewDataSet&gt;" />
+              <ui:AddDataRow DataRow="{x:Null}" ArrayRow="[{customerName}]" DataTable="[testDT]" DisplayName="name -Add Data Row" sap:VirtualizedContainerService.HintSize="436.666666666667,22" sap2010:WorkflowViewState.IdRef="AddDataRow_1" />
+              <ui:AddDataRow DataRow="{x:Null}" ArrayRow="[{customerEmail}]" DataTable="[testDT]" DisplayName="email - Add Data Row" sap:VirtualizedContainerService.HintSize="436.666666666667,22" sap2010:WorkflowViewState.IdRef="AddDataRow_2" />
+              <ui:AddDataRow DataRow="{x:Null}" ArrayRow="[{}]" DataTable="[testDT]" DisplayName="add space -Add Data Row" sap:VirtualizedContainerService.HintSize="436.666666666667,22" sap2010:WorkflowViewState.IdRef="AddDataRow_7" />
+              <ui:AddDataRow DataRow="{x:Null}" ArrayRow="[{item1,quantity1}]" DataTable="[testDT]" DisplayName="item1/q1 - Add Data Row" sap:VirtualizedContainerService.HintSize="436.666666666667,22" sap2010:WorkflowViewState.IdRef="AddDataRow_3" />
+              <ui:AddDataRow DataRow="{x:Null}" ArrayRow="[{item2,quantity2}]" DataTable="[testDT]" DisplayName="item2/q2 - Add Data Row" sap:VirtualizedContainerService.HintSize="436.666666666667,22" sap2010:WorkflowViewState.IdRef="AddDataRow_4" />
+              <ui:AddDataRow DataRow="{x:Null}" ArrayRow="[{item3,quantity3}]" DataTable="[testDT]" DisplayName="item3/q3 - Add Data Row" sap:VirtualizedContainerService.HintSize="436.666666666667,22" sap2010:WorkflowViewState.IdRef="AddDataRow_5" />
+              <ui:ExcelApplicationScope Password="{x:Null}" DisplayName="Excel Application Scope" sap:VirtualizedContainerService.HintSize="436.666666666667,287.333333333333" sap2010:WorkflowViewState.IdRef="ExcelApplicationScope_1" InstanceCachePeriod="3000" WorkbookPath="C:\Users\mainuser\Desktop\Revature\Yu_Timothy_Bradburn_Kenneth_P0\P0 source datasheet.xlsx">
                 <ui:ExcelApplicationScope.Body>
                   <ActivityAction x:TypeArguments="ui:WorkbookApplication">
                     <ActivityAction.Argument>
