@@ -1,4 +1,4 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="RemoveClientTest" mva:VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="982.666666666667,2350" sap2010:WorkflowViewState.IdRef="RemoveClientTest_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="RemoveClientTest" mva:VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="765.333333333333,5839.33333333333" sap2010:WorkflowViewState.IdRef="RemoveClientTest_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="31">
       <x:String>System.Activities</x:String>
@@ -59,19 +59,19 @@
       <AssemblyReference>System.Memory</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence sap:VirtualizedContainerService.HintSize="992.666666666667,2285.33333333333" sap2010:WorkflowViewState.IdRef="Sequence_10">
+  <Sequence sap:VirtualizedContainerService.HintSize="775.333333333333,5734.66666666667" sap2010:WorkflowViewState.IdRef="Sequence_10">
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:ExcelApplicationScope Password="{x:Null}" DisplayName="Excel Application Scope" sap:VirtualizedContainerService.HintSize="950.666666666667,2193.33333333333" sap2010:WorkflowViewState.IdRef="ExcelApplicationScope_3" InstanceCachePeriod="3000" WorkbookPath="C:\Users\mainuser\Desktop\Revature\Yu_Timothy_Bradburn_Kenneth_P0\P0 source datasheet.xlsx">
+    <ui:ExcelApplicationScope Password="{x:Null}" DisplayName="Excel Application Scope" sap:VirtualizedContainerService.HintSize="733.333333333333,5642.66666666667" sap2010:WorkflowViewState.IdRef="ExcelApplicationScope_3" InstanceCachePeriod="3000" WorkbookPath="..\P0 source datasheet.xlsx">
       <ui:ExcelApplicationScope.Body>
         <ActivityAction x:TypeArguments="ui:WorkbookApplication">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="ui:WorkbookApplication" Name="ExcelWorkbookScope" />
           </ActivityAction.Argument>
-          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="916.666666666667,2084.66666666667" sap2010:WorkflowViewState.IdRef="Sequence_9">
+          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="699.333333333333,5534" sap2010:WorkflowViewState.IdRef="Sequence_9">
             <Sequence.Variables>
               <Variable x:TypeArguments="sd:DataTable" Name="clientDT" />
               <Variable x:TypeArguments="x:String" Name="clientString" />
@@ -82,14 +82,14 @@
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <ui:ExcelReadRange AddHeaders="True" DataTable="[clientDT]" DisplayName="Read Range" sap:VirtualizedContainerService.HintSize="874.666666666667,58.6666666666667" sap2010:WorkflowViewState.IdRef="ExcelReadRange_1" SheetName="clients_structured">
+            <ui:ExcelReadRange AddHeaders="True" DataTable="[clientDT]" DisplayName="Read Range" sap:VirtualizedContainerService.HintSize="657.333333333333,58.6666666666667" sap2010:WorkflowViewState.IdRef="ExcelReadRange_1" SheetName="clients_structured">
               <ui:ExcelReadRange.Range>
                 <InArgument x:TypeArguments="x:String">
                   <Literal x:TypeArguments="x:String" Value="" />
                 </InArgument>
               </ui:ExcelReadRange.Range>
             </ui:ExcelReadRange>
-            <ui:MultipleAssign DisplayName="Multiple Assign" sap:VirtualizedContainerService.HintSize="874.666666666667,97.3333333333333" sap2010:WorkflowViewState.IdRef="MultipleAssign_1">
+            <ui:MultipleAssign DisplayName="Multiple Assign" sap:VirtualizedContainerService.HintSize="657.333333333333,97.3333333333333" sap2010:WorkflowViewState.IdRef="MultipleAssign_1">
               <ui:MultipleAssign.AssignOperations>
                 <scg:List x:TypeArguments="ui:AssignOperation" Capacity="4">
                   <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_1">
@@ -103,9 +103,9 @@
                 </scg:List>
               </ui:MultipleAssign.AssignOperations>
             </ui:MultipleAssign>
-            <ui:InterruptibleDoWhile DisplayName="Do While" sap:VirtualizedContainerService.HintSize="874.666666666667,1756.66666666667" sap2010:WorkflowViewState.IdRef="InterruptibleDoWhile_1">
+            <ui:InterruptibleDoWhile DisplayName="Do While" sap:VirtualizedContainerService.HintSize="657.333333333333,5206" sap2010:WorkflowViewState.IdRef="InterruptibleDoWhile_1">
               <ui:InterruptibleDoWhile.Body>
-                <Sequence sap:VirtualizedContainerService.HintSize="838,1587.33333333333" sap2010:WorkflowViewState.IdRef="Sequence_8">
+                <Sequence sap:VirtualizedContainerService.HintSize="620.666666666667,5036.66666666667" sap2010:WorkflowViewState.IdRef="Sequence_8">
                   <Sequence.Variables>
                     <Variable x:TypeArguments="x:String" Name="inputOption" />
                     <Variable x:TypeArguments="x:String" Name="clientName" />
@@ -122,7 +122,7 @@
                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
-                  <ui:InputDialog Options="{x:Null}" DisplayName="Input Dialog" sap:VirtualizedContainerService.HintSize="796,299.333333333333" sap2010:WorkflowViewState.IdRef="InputDialog_1" IsPassword="False" Label="Client Options:" OptionsString="Add;Remove by order number;Remove by name;Search;Exit">
+                  <ui:InputDialog Options="{x:Null}" DisplayName="Input Dialog" sap:VirtualizedContainerService.HintSize="578.666666666667,299.333333333333" sap2010:WorkflowViewState.IdRef="InputDialog_1" IsPassword="False" Label="Client Options:" OptionsString="Add;Remove by order number;Remove by name;Search;Exit">
                     <ui:InputDialog.Result>
                       <OutArgument x:TypeArguments="x:String">[inputOption]</OutArgument>
                     </ui:InputDialog.Result>
@@ -132,8 +132,8 @@
                       </InArgument>
                     </ui:InputDialog.Title>
                   </ui:InputDialog>
-                  <Switch x:TypeArguments="x:String" DisplayName="Switch" Expression="[inputOption]" sap:VirtualizedContainerService.HintSize="796,1156" sap2010:WorkflowViewState.IdRef="Switch`1_3">
-                    <Sequence x:Key="Add" sap:VirtualizedContainerService.HintSize="538.666666666667,4284" sap2010:WorkflowViewState.IdRef="Sequence_4">
+                  <Switch x:TypeArguments="x:String" DisplayName="Switch" Expression="[inputOption]" sap:VirtualizedContainerService.HintSize="578.666666666667,4605.33333333333" sap2010:WorkflowViewState.IdRef="Switch`1_3">
+                    <Sequence x:Key="Add" sap:VirtualizedContainerService.HintSize="538.666666666667,4324" sap2010:WorkflowViewState.IdRef="Sequence_4">
                       <Sequence.Variables>
                         <Variable x:TypeArguments="x:String" Name="yesNo" />
                         <Variable x:TypeArguments="x:Int32" Name="orderNumber" />
@@ -323,7 +323,7 @@
                           </InArgument>
                         </ui:InputDialog.Title>
                       </ui:InputDialog>
-                      <ui:ExcelApplicationScope Password="{x:Null}" DisplayName="Excel Application Scope" sap:VirtualizedContainerService.HintSize="496.666666666667,572" sap2010:WorkflowViewState.IdRef="ExcelApplicationScope_1" InstanceCachePeriod="3000" WorkbookPath="C:\Users\mainuser\Desktop\Revature\Yu_Timothy_Bradburn_Kenneth_P0\P0 source datasheet.xlsx">
+                      <ui:ExcelApplicationScope Password="{x:Null}" DisplayName="Excel Application Scope" sap:VirtualizedContainerService.HintSize="496.666666666667,572" sap2010:WorkflowViewState.IdRef="ExcelApplicationScope_1" InstanceCachePeriod="3000" WorkbookPath="..\P0 source datasheet.xlsx">
                         <ui:ExcelApplicationScope.Body>
                           <ActivityAction x:TypeArguments="ui:WorkbookApplication">
                             <ActivityAction.Argument>
@@ -381,7 +381,7 @@
                         <InArgument x:TypeArguments="x:Boolean">False</InArgument>
                       </Assign.Value>
                     </Assign>
-                    <Sequence x:Key="Remove by order number" sap:VirtualizedContainerService.HintSize="538.666666666667,1428" sap2010:WorkflowViewState.IdRef="Sequence_7">
+                    <Sequence x:Key="Remove by order number" sap:VirtualizedContainerService.HintSize="538.666666666667,1468" sap2010:WorkflowViewState.IdRef="Sequence_7">
                       <Sequence.Variables>
                         <Variable x:TypeArguments="x:String" Name="orderNumber" />
                         <Variable x:TypeArguments="x:String" Name="yesNo" />
@@ -401,7 +401,7 @@
                           </InArgument>
                         </ui:InputDialog.Title>
                       </ui:InputDialog>
-                      <ui:ExcelApplicationScope Password="{x:Null}" DisplayName="Excel Application Scope" sap:VirtualizedContainerService.HintSize="496.666666666667,546.666666666667" sap2010:WorkflowViewState.IdRef="ExcelApplicationScope_2" InstanceCachePeriod="3000" WorkbookPath="C:\Users\mainuser\Desktop\Revature\Yu_Timothy_Bradburn_Kenneth_P0\P0 source datasheet.xlsx">
+                      <ui:ExcelApplicationScope Password="{x:Null}" DisplayName="Excel Application Scope" sap:VirtualizedContainerService.HintSize="496.666666666667,546.666666666667" sap2010:WorkflowViewState.IdRef="ExcelApplicationScope_2" InstanceCachePeriod="3000" WorkbookPath="..\P0 source datasheet.xlsx">
                         <ui:ExcelApplicationScope.Body>
                           <ActivityAction x:TypeArguments="ui:WorkbookApplication">
                             <ActivityAction.Argument>
@@ -468,7 +468,7 @@
                         <x:Null x:Key="No" />
                       </Switch>
                     </Sequence>
-                    <Sequence x:Key="Remove by name" sap:VirtualizedContainerService.HintSize="538.666666666667,1428" sap2010:WorkflowViewState.IdRef="Sequence_12">
+                    <Sequence x:Key="Remove by name" sap:VirtualizedContainerService.HintSize="538.666666666667,1468" sap2010:WorkflowViewState.IdRef="Sequence_12">
                       <Sequence.Variables>
                         <Variable x:TypeArguments="x:String" Name="orderNumber" />
                         <Variable x:TypeArguments="x:String" Name="yesNo" />
@@ -488,7 +488,7 @@
                           </InArgument>
                         </ui:InputDialog.Title>
                       </ui:InputDialog>
-                      <ui:ExcelApplicationScope Password="{x:Null}" DisplayName="Excel Application Scope" sap:VirtualizedContainerService.HintSize="496.666666666667,546.666666666667" sap2010:WorkflowViewState.IdRef="ExcelApplicationScope_4" InstanceCachePeriod="3000" WorkbookPath="C:\Users\mainuser\Desktop\Revature\Yu_Timothy_Bradburn_Kenneth_P0\P0 source datasheet.xlsx">
+                      <ui:ExcelApplicationScope Password="{x:Null}" DisplayName="Excel Application Scope" sap:VirtualizedContainerService.HintSize="496.666666666667,546.666666666667" sap2010:WorkflowViewState.IdRef="ExcelApplicationScope_4" InstanceCachePeriod="3000" WorkbookPath="..\P0 source datasheet.xlsx">
                         <ui:ExcelApplicationScope.Body>
                           <ActivityAction x:TypeArguments="ui:WorkbookApplication">
                             <ActivityAction.Argument>
@@ -555,7 +555,7 @@
                         <x:Null x:Key="No" />
                       </Switch>
                     </Sequence>
-                    <Sequence x:Key="Search" sap:VirtualizedContainerService.HintSize="756,952" sap2010:WorkflowViewState.IdRef="Sequence_13">
+                    <Sequence x:Key="Search" sap:VirtualizedContainerService.HintSize="756,948.666666666667" sap2010:WorkflowViewState.IdRef="Sequence_13">
                       <Sequence.Variables>
                         <Variable x:TypeArguments="sd:DataTable" Name="vendorList" />
                         <Variable x:TypeArguments="x:String" Name="findVendor" />
@@ -578,7 +578,7 @@
                           </InArgument>
                         </ui:InputDialog.Title>
                       </ui:InputDialog>
-                      <ui:ExcelApplicationScope Password="{x:Null}" DisplayName="Excel Application Scope" sap:VirtualizedContainerService.HintSize="714,259.333333333333" sap2010:WorkflowViewState.IdRef="ExcelApplicationScope_5" InstanceCachePeriod="3000" WorkbookPath="C:\Users\mainuser\Desktop\Revature\Yu_Timothy_Bradburn_Kenneth_P0\P0 source datasheet.xlsx">
+                      <ui:ExcelApplicationScope Password="{x:Null}" DisplayName="Excel Application Scope" sap:VirtualizedContainerService.HintSize="714,259.333333333333" sap2010:WorkflowViewState.IdRef="ExcelApplicationScope_5" InstanceCachePeriod="3000" WorkbookPath="..\P0 source datasheet.xlsx">
                         <ui:ExcelApplicationScope.Body>
                           <ActivityAction x:TypeArguments="ui:WorkbookApplication">
                             <ActivityAction.Argument>
@@ -600,7 +600,7 @@
                           <OutArgument x:TypeArguments="x:String">[clientName]</OutArgument>
                         </ui:LookupDataTable.CellValue>
                       </ui:LookupDataTable>
-                      <If Condition="[found &lt; 0]" sap:VirtualizedContainerService.HintSize="714,214" sap2010:WorkflowViewState.IdRef="If_2">
+                      <If Condition="[found &lt; 0]" sap:VirtualizedContainerService.HintSize="714,210.666666666667" sap2010:WorkflowViewState.IdRef="If_2">
                         <If.Then>
                           <ui:MessageBox Caption="{x:Null}" ChosenButton="{x:Null}" DisplayName="Message Box" sap:VirtualizedContainerService.HintSize="334,58.6666666666667" sap2010:WorkflowViewState.IdRef="MessageBox_1" Text="[&quot;The client &quot; + clientName + &quot; cannot be found. :l&quot;]" />
                         </If.Then>
