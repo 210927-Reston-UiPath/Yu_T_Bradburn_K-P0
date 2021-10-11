@@ -102,7 +102,10 @@
     </sap:WorkflowViewStateService.ViewState>
     <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke RunUpdate workflow" sap:VirtualizedContainerService.HintSize="1362,112" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="RunUpdate.xaml">
       <ui:InvokeWorkflowFile.Arguments>
-        <InOutArgument x:TypeArguments="sd:DataTable" x:Key="VendorDataTableForCount">[VendorInfo]</InOutArgument>
+        <InOutArgument x:TypeArguments="sd:DataTable" x:Key="VendorDataTableForCount" />
+        <InOutArgument x:TypeArguments="sd:DataTable" x:Key="VendorCalculatedDT">
+          <mva:VisualBasicReference x:TypeArguments="sd:DataTable" ExpressionText="VendorInfo" />
+        </InOutArgument>
       </ui:InvokeWorkflowFile.Arguments>
     </ui:InvokeWorkflowFile>
     <ui:ExcelApplicationScope Password="{x:Null}" DisplayName="Excel Application Scope" sap:VirtualizedContainerService.HintSize="1362,6888" sap2010:WorkflowViewState.IdRef="ExcelApplicationScope_1" InstanceCachePeriod="3000" WorkbookPath="..\P0 source datasheet.xlsx">
@@ -491,7 +494,7 @@
                                           <OutArgument x:TypeArguments="x:Double">[PriceTotal]</OutArgument>
                                         </Assign.To>
                                         <Assign.Value>
-                                          <InArgument x:TypeArguments="x:Double">[(cdbl(VendorInfo.rows(SearchINV).item("Item Cost"))*row.Field(of Double)("Quantity")) + PriceTotal]</InArgument>
+                                          <InArgument x:TypeArguments="x:Double">[(cdbl(VendorInfo.rows(SearchINV).item("Cost"))*row.Field(of Double)("Quantity")) + PriceTotal]</InArgument>
                                         </Assign.Value>
                                       </Assign>
                                       <Assign sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_10">
