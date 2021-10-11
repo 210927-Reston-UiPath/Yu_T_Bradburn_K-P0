@@ -103,7 +103,7 @@
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <ui:InputDialog Options="{x:Null}" Title="{x:Null}" DisplayName="Input Dialog" sap:VirtualizedContainerService.HintSize="497,291" sap2010:WorkflowViewState.IdRef="InputDialog_1" IsPassword="False" Label="Choose Menu Option: " OptionsString="Add Client;Add Vendor;Run Order;Inventory Update;Exit">
+            <ui:InputDialog Options="{x:Null}" DisplayName="Input Dialog" sap:VirtualizedContainerService.HintSize="497,291" sap2010:WorkflowViewState.IdRef="InputDialog_1" IsPassword="False" Label="Choose Menu Option: " OptionsString="Add Client;Add Vendor;Run Order;Inventory Update;Exit" Title="Main Menu">
               <ui:InputDialog.Result>
                 <OutArgument x:TypeArguments="x:String">[inputOption]</OutArgument>
               </ui:InputDialog.Result>
