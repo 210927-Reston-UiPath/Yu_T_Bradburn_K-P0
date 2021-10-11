@@ -1,14 +1,18 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="TotalExpenseTest" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="TotalExpenseTest" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data" xmlns:this="clr-namespace:" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <x:Members>
     <x:Property Name="vendorCaluclatedDT" Type="OutArgument(sd:DataTable)" />
+    <x:Property Name="viCalculatedString" Type="InArgument(x:String)" />
   </x:Members>
+  <this:TotalExpenseTest.viCalculatedString>
+    <InArgument x:TypeArguments="x:String" />
+  </this:TotalExpenseTest.viCalculatedString>
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>970,1870</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>970,2367.33333333333</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>TotalExpenseTest_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
-    <scg:List x:TypeArguments="x:String" Capacity="32">
+    <scg:List x:TypeArguments="x:String" Capacity="64">
       <x:String>System.Activities</x:String>
       <x:String>System.Activities.Statements</x:String>
       <x:String>System.Activities.Expressions</x:String>
@@ -41,10 +45,14 @@
       <x:String>System.Runtime.InteropServices</x:String>
       <x:String>Microsoft.VisualBasic.CompilerServices</x:String>
       <x:String>UiPath.Shared.Activities</x:String>
+      <x:String>System.Security</x:String>
+      <x:String>UiPath.Mail</x:String>
+      <x:String>UiPath.Mail.SMTP.Activities</x:String>
+      <x:String>UiPath.Mail.Activities</x:String>
     </scg:List>
   </TextExpression.NamespacesForImplementation>
   <TextExpression.ReferencesForImplementation>
-    <scg:List x:TypeArguments="AssemblyReference" Capacity="28">
+    <scg:List x:TypeArguments="AssemblyReference" Capacity="56">
       <AssemblyReference>System.Activities</AssemblyReference>
       <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
       <AssemblyReference>mscorlib</AssemblyReference>
@@ -73,25 +81,25 @@
       <AssemblyReference>UiPath.OCR.Activities.Design</AssemblyReference>
       <AssemblyReference>UiPath.UIAutomationCore</AssemblyReference>
       <AssemblyReference>System.ServiceModel</AssemblyReference>
+      <AssemblyReference>UiPath.Mail.Activities</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="" sap:VirtualizedContainerService.HintSize="694.666666666667,1805.33333333333" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="" sap:VirtualizedContainerService.HintSize="694.666666666667,2302.66666666667" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:ExcelApplicationScope Password="{x:Null}" DisplayName="Excel Application Scope" sap:VirtualizedContainerService.HintSize="652.666666666667,1713.33333333333" sap2010:WorkflowViewState.IdRef="ExcelApplicationScope_1" InstanceCachePeriod="3000" WorkbookPath="..\P0 source datasheet.xlsx">
+    <ui:ExcelApplicationScope Password="{x:Null}" DisplayName="Excel Application Scope" sap:VirtualizedContainerService.HintSize="652.666666666667,2210.66666666667" sap2010:WorkflowViewState.IdRef="ExcelApplicationScope_1" InstanceCachePeriod="3000" WorkbookPath="..\P0 source datasheet.xlsx">
       <ui:ExcelApplicationScope.Body>
         <ActivityAction x:TypeArguments="ui:WorkbookApplication">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="ui:WorkbookApplication" Name="ExcelWorkbookScope" />
           </ActivityAction.Argument>
-          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="618.666666666667,1604.66666666667" sap2010:WorkflowViewState.IdRef="Sequence_2">
+          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="618.666666666667,2102" sap2010:WorkflowViewState.IdRef="Sequence_2">
             <Sequence.Variables>
               <Variable x:TypeArguments="sd:DataTable" Name="vendorDT" />
               <Variable x:TypeArguments="x:Double" Name="itemDiscount" />
-              <Variable x:TypeArguments="x:String" Name="viCalculatedString" />
             </Sequence.Variables>
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -232,7 +240,34 @@
                 </scg:List>
               </ui:MultipleAssign.AssignOperations>
             </ui:MultipleAssign>
+            <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="576.666666666667,268" sap2010:WorkflowViewState.IdRef="CommentOut_5">
+              <ui:CommentOut.Body>
+                <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="376,189.333333333333" sap2010:WorkflowViewState.IdRef="Sequence_18">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <ui:MultipleAssign DisplayName="Multiple Assign" sap:VirtualizedContainerService.HintSize="334,97.3333333333333" sap2010:WorkflowViewState.IdRef="MultipleAssign_13">
+                    <ui:MultipleAssign.AssignOperations>
+                      <scg:List x:TypeArguments="ui:AssignOperation" Capacity="4">
+                        <ui:AssignOperation To="{x:Null}" sap2010:WorkflowViewState.IdRef="AssignOperation_33">
+                          <ui:AssignOperation.Value>
+                            <InArgument x:TypeArguments="x:String">["The following items are on sale:"]</InArgument>
+                          </ui:AssignOperation.Value>
+                        </ui:AssignOperation>
+                      </scg:List>
+                    </ui:MultipleAssign.AssignOperations>
+                  </ui:MultipleAssign>
+                </Sequence>
+              </ui:CommentOut.Body>
+            </ui:CommentOut>
             <ui:MessageBox Caption="{x:Null}" ChosenButton="{x:Null}" DisplayName="Message Box" sap:VirtualizedContainerService.HintSize="576.666666666667,58.6666666666667" sap2010:WorkflowViewState.IdRef="MessageBox_6" Text="[viCalculatedString]" />
+            <ui:SendMail Bcc="{x:Null}" Cc="{x:Null}" From="{x:Null}" MailMessage="{x:Null}" Name="{x:Null}" SecurePassword="{x:Null}" TimeoutMS="{x:Null}" Body="[viCalculatedString]" DisplayName="Send SMTP Mail Message" Email="testemail22113355@gmail.com" EnableSSL="True" sap:VirtualizedContainerService.HintSize="576.666666666667,149.333333333333" sap2010:WorkflowViewState.IdRef="SendMail_1" IsBodyHtml="False" Password="testemail2211" Port="465" SecureConnection="Auto" Server="smtp.gmail.com" Subject="Discounted Items on Sale" To="testemail22113355@gmail.com">
+              <ui:SendMail.Files>
+                <scg:List x:TypeArguments="InArgument(x:String)" Capacity="0" />
+              </ui:SendMail.Files>
+            </ui:SendMail>
           </Sequence>
         </ActivityAction>
       </ui:ExcelApplicationScope.Body>
