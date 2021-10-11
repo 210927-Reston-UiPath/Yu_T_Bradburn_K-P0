@@ -3500,15 +3500,15 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\mainuser\\.nuget\\packages\\": {}
+    "C:\\Users\\Kenneth Bradburn\\.nuget\\packages\\": {}
   },
   "project": {
     "restore": {
       "projectUniqueName": "P0",
       "projectName": "P0",
-      "projectPath": "C:\\Users\\mainuser\\Desktop\\Revature\\Yu_Timothy_Bradburn_Kenneth_P0\\P0\\.local",
-      "packagesPath": "C:\\Users\\mainuser\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\mainuser\\Desktop\\Revature\\Yu_Timothy_Bradburn_Kenneth_P0\\P0\\.local"
+      "projectPath": "C:\\Users\\Kenneth Bradburn\\Documents\\UiPath\\Yu_Timothy_Bradburn_Kenneth_P0\\P0\\.local",
+      "packagesPath": "C:\\Users\\Kenneth Bradburn\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Kenneth Bradburn\\Documents\\UiPath\\Yu_Timothy_Bradburn_Kenneth_P0\\P0\\.local"
     },
     "frameworks": {
       "net461": {
