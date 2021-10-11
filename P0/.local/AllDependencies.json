@@ -45,6 +45,22 @@
           "lib/Net40/ICSharpCode.AvalonEdit.dll": {}
         }
       },
+      "BalaReva.Excel.Activities/2021.0.0": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.Office.Interop.Excel": "15.0.4795.1000",
+          "MicrosoftOfficeCore": "15.0.0"
+        },
+        "compile": {
+          "lib/_._": {}
+        },
+        "runtime": {
+          "lib/BalaReva.Excel.Base.dll": {},
+          "lib/BalaReva.Excel.Design.dll": {},
+          "lib/BalaReva.Excel.Utilities.dll": {},
+          "lib/BalaReva.Excel.dll": {}
+        }
+      },
       "BouncyCastle/1.8.5": {
         "type": "package",
         "compile": {
@@ -73,6 +89,15 @@
         },
         "runtime": {
           "lib/net40-client/CsvHelper.dll": {}
+        }
+      },
+      "DataTablePlugins.Activities/1.1.5": {
+        "type": "package",
+        "compile": {
+          "lib/net461/_._": {}
+        },
+        "runtime": {
+          "lib/net461/DataTablePlugins.dll": {}
         }
       },
       "DocumentFormat.OpenXml/2.5.0": {
@@ -520,6 +545,15 @@
           "lib/net45/Microsoft.Identity.Client.dll": {}
         }
       },
+      "Microsoft.Office.Interop.Excel/15.0.4795.1000": {
+        "type": "package",
+        "compile": {
+          "lib/net20/_._": {}
+        },
+        "runtime": {
+          "lib/net20/Microsoft.Office.Interop.Excel.dll": {}
+        }
+      },
       "Microsoft.Rest.ClientRuntime/2.3.21": {
         "type": "package",
         "dependencies": {
@@ -546,6 +580,15 @@
         },
         "runtime": {
           "lib/Microsoft.VisualStudio.OLE.Interop.dll": {}
+        }
+      },
+      "MicrosoftOfficeCore/15.0.0": {
+        "type": "package",
+        "compile": {
+          "lib/net35/_._": {}
+        },
+        "runtime": {
+          "lib/net35/Office.dll": {}
         }
       },
       "Newtonsoft.Json/11.0.2": {
@@ -1662,6 +1705,20 @@
         "lib/Net40/ICSharpCode.AvalonEdit.xml"
       ]
     },
+    "BalaReva.Excel.Activities/2021.0.0": {
+      "sha512": "wNt9V2K11KZ6L7HPF+IP7sU+qidduP4VVZycJA188jR5klcTDHzWUKCE94Hs5x7Uhj+iaw89W6chXxl6Qqg22g==",
+      "type": "package",
+      "path": "balareva.excel.activities/2021.0.0",
+      "files": [
+        ".nupkg.metadata",
+        "balareva.excel.activities.2021.0.0.nupkg.sha512",
+        "balareva.excel.activities.nuspec",
+        "lib/BalaReva.Excel.Base.dll",
+        "lib/BalaReva.Excel.Design.dll",
+        "lib/BalaReva.Excel.Utilities.dll",
+        "lib/BalaReva.Excel.dll"
+      ]
+    },
     "BouncyCastle/1.8.5": {
       "sha512": "196QWfvglefGd/Cr2C4hIdmA9HYkLFZovxJ7L0BAOFlNn+qlmVxqpxpcKGoC5AF4rOuoUq3ylzLgKZW5j4nmDQ==",
       "type": "package",
@@ -1713,6 +1770,17 @@
         "lib/portable-net40+sl5+win8+wpa+wp8/CsvHelper.dll",
         "lib/portable-net40+sl5+win8+wpa+wp8/CsvHelper.pdb",
         "lib/portable-net40+sl5+win8+wpa+wp8/CsvHelper.xml"
+      ]
+    },
+    "DataTablePlugins.Activities/1.1.5": {
+      "sha512": "QWSLLGWYmmdmRuxtCIp8Nc1OcBQbPjK++xC0+ZoELwwQziow70ret8lJgGdnlGdFTWTRL89FWW5eO+lEqUQ3WA==",
+      "type": "package",
+      "path": "datatableplugins.activities/1.1.5",
+      "files": [
+        ".nupkg.metadata",
+        "datatableplugins.activities.1.1.5.nupkg.sha512",
+        "datatableplugins.activities.nuspec",
+        "lib/net461/DataTablePlugins.dll"
       ]
     },
     "DocumentFormat.OpenXml/2.5.0": {
@@ -2323,6 +2391,18 @@
         "ref/xamarinmac20/Microsoft.Identity.Client.xml"
       ]
     },
+    "Microsoft.Office.Interop.Excel/15.0.4795.1000": {
+      "sha512": "DfceS96ustwfL8EOJNNRtpk6b0RylhjNpgeeemuvi9X4GYks2UTeAimjSrdFEfuqRo5ibZ4Sd0gJIeDr9gMa6Q==",
+      "type": "package",
+      "path": "microsoft.office.interop.excel/15.0.4795.1000",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/net20/Microsoft.Office.Interop.Excel.dll",
+        "microsoft.office.interop.excel.15.0.4795.1000.nupkg.sha512",
+        "microsoft.office.interop.excel.nuspec"
+      ]
+    },
     "Microsoft.Rest.ClientRuntime/2.3.21": {
       "sha512": "KDYlgTyO693V6pi6SGk9eg+dDvKjuOgmkapbHdpnB1SmTPKpvWxVLIMyARJsCFLfB6axyURUJHOfvxBQ0yJKeg==",
       "type": "package",
@@ -2353,6 +2433,18 @@
         "lib/Microsoft.VisualStudio.OLE.Interop.xml",
         "microsoft.visualstudio.ole.interop.7.10.6071.nupkg.sha512",
         "microsoft.visualstudio.ole.interop.nuspec"
+      ]
+    },
+    "MicrosoftOfficeCore/15.0.0": {
+      "sha512": "/KgYw8uvv0Ut8FPvyEa1XJ/TrLSRgvTv3JgC2IT0/8NwoICzbEJWfmfwsE6Dwi8WH0jVkTEO7zRvGvaKqUOhqQ==",
+      "type": "package",
+      "path": "microsoftofficecore/15.0.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/net35/Office.dll",
+        "microsoftofficecore.15.0.0.nupkg.sha512",
+        "microsoftofficecore.nuspec"
       ]
     },
     "Newtonsoft.Json/11.0.2": {
@@ -3493,6 +3585,8 @@
   "projectFileDependencyGroups": {
     "": [],
     ".NETFramework,Version=v4.6.1": [
+      "BalaReva.Excel.Activities >= 2021.0.0 <= 2021.0.0",
+      "DataTablePlugins.Activities >= 1.1.5 <= 1.1.5",
       "UiPath.Excel.Activities >= 2.9.5 <= 2.9.5",
       "UiPath.Mail.Activities >= 1.9.5 <= 1.9.5",
       "UiPath.System.Activities >= 20.10.4 <= 20.10.4",
@@ -3500,19 +3594,29 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Kenneth Bradburn\\.nuget\\packages\\": {}
+    "C:\\Users\\mainuser\\.nuget\\packages\\": {}
   },
   "project": {
     "restore": {
       "projectUniqueName": "P0",
       "projectName": "P0",
-      "projectPath": "C:\\Users\\Kenneth Bradburn\\Documents\\UiPath\\Yu_Timothy_Bradburn_Kenneth_P0\\P0\\.local",
-      "packagesPath": "C:\\Users\\Kenneth Bradburn\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Kenneth Bradburn\\Documents\\UiPath\\Yu_Timothy_Bradburn_Kenneth_P0\\P0\\.local"
+      "projectPath": "C:\\Users\\mainuser\\Desktop\\Revature\\Yu_Timothy_Bradburn_Kenneth_P0\\P0\\.local",
+      "packagesPath": "C:\\Users\\mainuser\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\mainuser\\Desktop\\Revature\\Yu_Timothy_Bradburn_Kenneth_P0\\P0\\.local"
     },
     "frameworks": {
       "net461": {
         "dependencies": {
+          "BalaReva.Excel.Activities": {
+            "include": "Runtime",
+            "target": "Package",
+            "version": "[2021.0.0, 2021.0.0]"
+          },
+          "DataTablePlugins.Activities": {
+            "include": "Runtime",
+            "target": "Package",
+            "version": "[1.1.5, 1.1.5]"
+          },
           "UiPath.Excel.Activities": {
             "include": "Runtime",
             "target": "Package",
@@ -3536,5 +3640,21 @@
         }
       }
     }
-  }
+  },
+  "logs": [
+    {
+      "code": "NU3034",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Package 'MicrosoftOfficeCore 15.0.0' from source 'https://api.nuget.org/v3/index.json': This package is signed but not by a trusted signer.",
+      "libraryId": "MicrosoftOfficeCore"
+    },
+    {
+      "code": "NU3034",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Package 'Microsoft.Office.Interop.Excel 15.0.4795.1000' from source 'https://api.nuget.org/v3/index.json': This package is signed but not by a trusted signer.",
+      "libraryId": "Microsoft.Office.Interop.Excel"
+    }
+  ]
 }

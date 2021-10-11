@@ -3,6 +3,8 @@
   "description": "P0 Project for Timothy and Kenneth",
   "main": "Main.xaml",
   "dependencies": {
+    "BalaReva.Excel.Activities": "[2021.0.0]",
+    "DataTablePlugins.Activities": "[1.1.5]",
     "UiPath.Excel.Activities": "[2.9.5]",
     "UiPath.Mail.Activities": "[1.9.5]",
     "UiPath.System.Activities": "[20.10.4]",

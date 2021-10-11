@@ -5,10 +5,10 @@
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1252,770</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>907.333333333333,4326</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>TotalExpense_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
-    <scg:List x:TypeArguments="x:String" Capacity="30">
+    <scg:List x:TypeArguments="x:String" Capacity="33">
       <x:String>System.Activities</x:String>
       <x:String>System.Activities.Statements</x:String>
       <x:String>System.Activities.Expressions</x:String>
@@ -39,10 +39,13 @@
       <x:String>UiPath.Excel.Activities</x:String>
       <x:String>System.Reflection</x:String>
       <x:String>System.Runtime.InteropServices</x:String>
+      <x:String>DataTablePlugins</x:String>
+      <x:String>BalaReva.Excel.Sheets</x:String>
+      <x:String>BalaReva.Excel.Base</x:String>
     </scg:List>
   </TextExpression.NamespacesForImplementation>
   <TextExpression.ReferencesForImplementation>
-    <scg:List x:TypeArguments="AssemblyReference" Capacity="28">
+    <scg:List x:TypeArguments="AssemblyReference" Capacity="31">
       <AssemblyReference>System.Activities</AssemblyReference>
       <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
       <AssemblyReference>mscorlib</AssemblyReference>
@@ -71,9 +74,12 @@
       <AssemblyReference>UiPath.System.Activities.Design</AssemblyReference>
       <AssemblyReference>UiPath.Excel.Activities.Design</AssemblyReference>
       <AssemblyReference>UiPath.Excel.Activities</AssemblyReference>
+      <AssemblyReference>DataTablePlugins</AssemblyReference>
+      <AssemblyReference>BalaReva.Excel</AssemblyReference>
+      <AssemblyReference>BalaReva.Excel.Base</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="TotalExpense" sap:VirtualizedContainerService.HintSize="476,665" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="TotalExpense" sap:VirtualizedContainerService.HintSize="636,4221.33333333333" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="sd:DataTable" Name="vendorCaluclatedDT" />
       <Variable x:TypeArguments="x:String" Name="viCalculatedString" />
@@ -84,32 +90,351 @@
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke Workflow File" sap:VirtualizedContainerService.HintSize="434,112" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_3" UnSafe="False" WorkflowFileName="CalculateDiscount.xaml">
-      <ui:InvokeWorkflowFile.Arguments>
-        <OutArgument x:TypeArguments="sd:DataTable" x:Key="vendorCaluclatedDT">[vendorCaluclatedDT]</OutArgument>
-      </ui:InvokeWorkflowFile.Arguments>
-    </ui:InvokeWorkflowFile>
-    <ui:OutputDataTable DataTable="[vendorCaluclatedDT]" DisplayName="Output Data Table" sap:VirtualizedContainerService.HintSize="434,22" sap2010:WorkflowViewState.IdRef="OutputDataTable_1" Text="[viCalculatedString]" />
-    <ui:MessageBox Caption="{x:Null}" ChosenButton="{x:Null}" DisplayName="Message Box" sap:VirtualizedContainerService.HintSize="434,59" sap2010:WorkflowViewState.IdRef="MessageBox_1" Text="[viCalculatedString]" />
-    <ui:ExcelApplicationScope Password="{x:Null}" DisplayName="Excel Application Scope" sap:VirtualizedContainerService.HintSize="434,260" sap2010:WorkflowViewState.IdRef="ExcelApplicationScope_1" InstanceCachePeriod="3000" WorkbookPath="..\P0 source datasheet.xlsx">
+    <ui:ExcelApplicationScope Password="{x:Null}" DisplayName="Excel Application Scope" sap:VirtualizedContainerService.HintSize="594,4129.33333333333" sap2010:WorkflowViewState.IdRef="ExcelApplicationScope_1" InstanceCachePeriod="3000" WorkbookPath="..\P0 source datasheet.xlsx">
       <ui:ExcelApplicationScope.Body>
         <ActivityAction x:TypeArguments="ui:WorkbookApplication">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="ui:WorkbookApplication" Name="ExcelWorkbookScope" />
           </ActivityAction.Argument>
-          <Sequence sap:VirtualizedContainerService.HintSize="376,151" sap2010:WorkflowViewState.IdRef="Sequence_2">
+          <Sequence sap:VirtualizedContainerService.HintSize="560,4020.66666666667" sap2010:WorkflowViewState.IdRef="Sequence_2">
+            <Sequence.Variables>
+              <Variable x:TypeArguments="sd:DataTable" Name="isDT" />
+              <Variable x:TypeArguments="sd:DataTable" Name="vendorDT" />
+              <Variable x:TypeArguments="x:String" Name="outputString" />
+            </Sequence.Variables>
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <ui:ExcelReadRange AddHeaders="True" DataTable="[clientDT]" DisplayName="Read Range" sap:VirtualizedContainerService.HintSize="334,59" sap2010:WorkflowViewState.IdRef="ExcelReadRange_1" SheetName="clients">
+            <ui:ExcelReadRange AddHeaders="True" DataTable="[vendorDT]" DisplayName="Read Range" sap:VirtualizedContainerService.HintSize="518,58.6666666666667" sap2010:WorkflowViewState.IdRef="ExcelReadRange_1" SheetName="vendor_inventory">
               <ui:ExcelReadRange.Range>
                 <InArgument x:TypeArguments="x:String">
                   <Literal x:TypeArguments="x:String" Value="" />
                 </InArgument>
               </ui:ExcelReadRange.Range>
             </ui:ExcelReadRange>
+            <ui:ExcelReadRange AddHeaders="True" DataTable="[isDT]" DisplayName="Read Range" sap:VirtualizedContainerService.HintSize="518,58.6666666666667" sap2010:WorkflowViewState.IdRef="ExcelReadRange_2" SheetName="Sheet1">
+              <ui:ExcelReadRange.Range>
+                <InArgument x:TypeArguments="x:String">
+                  <Literal x:TypeArguments="x:String" Value="" />
+                </InArgument>
+              </ui:ExcelReadRange.Range>
+            </ui:ExcelReadRange>
+            <ui:FilterDataTable DataTable="[vendorDT]" DisplayName="Filter Data Table" sap:VirtualizedContainerService.HintSize="518,58.6666666666667" sap2010:WorkflowViewState.IdRef="FilterDataTable_1" OutputDataTable="[vendorDT]" SelectColumnsMode="Remove">
+              <ui:FilterDataTable.Filters>
+                <scg:List x:TypeArguments="ui:FilterOperationArgument" Capacity="4">
+                  <ui:FilterOperationArgument Column="{x:Null}" Operand="{x:Null}" BooleanOperator="And" Operator="LT" />
+                </scg:List>
+              </ui:FilterDataTable.Filters>
+              <ui:FilterDataTable.SelectColumns>
+                <scg:List x:TypeArguments="InArgument" Capacity="4">
+                  <InArgument x:TypeArguments="x:String">["Item Cost"]</InArgument>
+                  <InArgument x:TypeArguments="x:String">["Item Discount"]</InArgument>
+                </scg:List>
+              </ui:FilterDataTable.SelectColumns>
+            </ui:FilterDataTable>
+            <ui:MergeDataTable Destination="[isDT]" DisplayName="Merge Data Table" sap:VirtualizedContainerService.HintSize="518,22" sap2010:WorkflowViewState.IdRef="MergeDataTable_1" MissingSchemaAction="Add" Source="[vendorDT]" />
+            <ui:OutputDataTable DataTable="[isDT]" DisplayName="Output Data Table" sap:VirtualizedContainerService.HintSize="518,22" sap2010:WorkflowViewState.IdRef="OutputDataTable_2" Text="[outputString]" />
+            <ui:MessageBox Caption="{x:Null}" ChosenButton="{x:Null}" DisplayName="Message Box" sap:VirtualizedContainerService.HintSize="518,58.6666666666667" sap2010:WorkflowViewState.IdRef="MessageBox_2" Text="[outputString]" />
+            <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="518,268" sap2010:WorkflowViewState.IdRef="CommentOut_1">
+              <ui:CommentOut.Body>
+                <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="376,189.333333333333" sap2010:WorkflowViewState.IdRef="Sequence_5">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <ui:MultipleAssign DisplayName="Multiple Assign" sap:VirtualizedContainerService.HintSize="334,97.3333333333333" sap2010:WorkflowViewState.IdRef="MultipleAssign_1">
+                    <ui:MultipleAssign.AssignOperations>
+                      <scg:List x:TypeArguments="ui:AssignOperation" Capacity="4">
+                        <ui:AssignOperation To="{x:Null}" Value="{x:Null}" sap2010:WorkflowViewState.IdRef="AssignOperation_1" />
+                      </scg:List>
+                    </ui:MultipleAssign.AssignOperations>
+                  </ui:MultipleAssign>
+                </Sequence>
+              </ui:CommentOut.Body>
+            </ui:CommentOut>
+            <ui:ExcelWriteRange AddHeaders="True" DataTable="[isDT]" DisplayName="Write Range" sap:VirtualizedContainerService.HintSize="518,86.6666666666667" sap2010:WorkflowViewState.IdRef="ExcelWriteRange_1" SheetName="Sheet2">
+              <ui:ExcelWriteRange.StartingCell>
+                <InArgument x:TypeArguments="x:String">
+                  <Literal x:TypeArguments="x:String" Value="" />
+                </InArgument>
+              </ui:ExcelWriteRange.StartingCell>
+            </ui:ExcelWriteRange>
+            <Sequence sap:VirtualizedContainerService.HintSize="518,2975.33333333333" sap2010:WorkflowViewState.IdRef="Sequence_7">
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+              <ui:ExcelApplicationScope Password="{x:Null}" DisplayName="Excel Application Scope" sap:VirtualizedContainerService.HintSize="476,125.333333333333" sap2010:WorkflowViewState.IdRef="ExcelApplicationScope_2" InstanceCachePeriod="3000" WorkbookPath="..\P0 source datasheet.xlsx">
+                <ui:ExcelApplicationScope.Body>
+                  <ActivityAction x:TypeArguments="ui:WorkbookApplication">
+                    <ActivityAction.Argument>
+                      <DelegateInArgument x:TypeArguments="ui:WorkbookApplication" Name="ExcelWorkbookScope" />
+                    </ActivityAction.Argument>
+                  </ActivityAction>
+                </ui:ExcelApplicationScope.Body>
+              </ui:ExcelApplicationScope>
+              <Sequence DisplayName="Desktop" sap:VirtualizedContainerService.HintSize="476,1074" sap2010:WorkflowViewState.IdRef="Sequence_38">
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+                <ui:WindowScope ApplicationWindow="{x:Null}" SearchScope="{x:Null}" TimeoutMS="{x:Null}" Window="{x:Null}" DisplayName="Attach Window 'P0sourced Xlmain'" sap:VirtualizedContainerService.HintSize="434,636" sap2010:WorkflowViewState.IdRef="WindowScope_22" InformativeScreenshot="7ede5da917e7f81984aeabc75e598160" Selector="&lt;wnd app='excel.exe' cls='XLMAIN' title='P0 source datasheet.xlsx - Excel' /&gt;">
+                  <ui:WindowScope.Body>
+                    <ActivityAction x:TypeArguments="x:Object">
+                      <ActivityAction.Argument>
+                        <DelegateInArgument x:TypeArguments="x:Object" Name="ContextTarget" />
+                      </ActivityAction.Argument>
+                      <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="376,490" sap2010:WorkflowViewState.IdRef="Sequence_36">
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                        <ui:Click AlterIfDisabled="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click 'item  &quot;D&quot; 1'" sap:VirtualizedContainerService.HintSize="334,106" sap2010:WorkflowViewState.IdRef="Click_56" KeyModifiers="None" MouseButton="BTN_LEFT" SendWindowMessages="False" SimulateClick="False">
+                          <ui:Click.CursorPosition>
+                            <ui:CursorPosition OffsetX="35" OffsetY="6" Position="TopLeft" />
+                          </ui:Click.CursorPosition>
+                          <ui:Click.Target>
+                            <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="ad0bb5ef-1df5-4e40-94b4-07786b6d829a" InformativeScreenshot="1b74a17ca9eea8b6cf86499add490275" Selector="&lt;uia automationid='Grid' name='Grid' role='data grid' /&gt;&lt;uia automationid='D1' name='&amp;quot;D&amp;quot; 1' role='item' tableCol='4' tableRow='1' /&gt;">
+                              <ui:Target.TimeoutMS>
+                                <InArgument x:TypeArguments="x:Int32" />
+                              </ui:Target.TimeoutMS>
+                              <ui:Target.WaitForReady>
+                                <InArgument x:TypeArguments="ui:WaitForReady" />
+                              </ui:Target.WaitForReady>
+                            </ui:Target>
+                          </ui:Click.Target>
+                        </ui:Click>
+                        <ui:Click AlterIfDisabled="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click 'Tab Item  Data'" sap:VirtualizedContainerService.HintSize="334,106" sap2010:WorkflowViewState.IdRef="Click_57" KeyModifiers="None" MouseButton="BTN_LEFT" SendWindowMessages="False" SimulateClick="False">
+                          <ui:Click.CursorPosition>
+                            <ui:CursorPosition OffsetX="19" OffsetY="11" Position="TopLeft" />
+                          </ui:Click.CursorPosition>
+                          <ui:Click.Target>
+                            <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="9c7967cb-b75a-402b-b817-f692c9ce6e81" InformativeScreenshot="2d5c669ff73440cc3edf9ff16118cbbb" Selector="&lt;uia cls='MsoCommandBar' helpText='Ribbon toolbar' /&gt;&lt;uia cls='NetUIPanViewer' name='Ribbon Tabs' /&gt;&lt;uia cls='NetUIRibbonTab' name='Data' /&gt;">
+                              <ui:Target.TimeoutMS>
+                                <InArgument x:TypeArguments="x:Int32" />
+                              </ui:Target.TimeoutMS>
+                              <ui:Target.WaitForReady>
+                                <InArgument x:TypeArguments="ui:WaitForReady" />
+                              </ui:Target.WaitForReady>
+                            </ui:Target>
+                          </ui:Click.Target>
+                        </ui:Click>
+                        <ui:Click AlterIfDisabled="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click 'Button  Consolidate...'" sap:VirtualizedContainerService.HintSize="334,106" sap2010:WorkflowViewState.IdRef="Click_58" KeyModifiers="None" MouseButton="BTN_LEFT" SendWindowMessages="False" SimulateClick="False">
+                          <ui:Click.CursorPosition>
+                            <ui:CursorPosition OffsetX="9" OffsetY="8" Position="TopLeft" />
+                          </ui:Click.CursorPosition>
+                          <ui:Click.Target>
+                            <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="958efa48-466f-4cee-8dc7-908359ff56ad" InformativeScreenshot="427345fe88312b205ac8051e95fc38d5" Selector="&lt;uia cls='MsoCommandBar' helpText='Ribbon toolbar' /&gt;&lt;uia cls='NetUIOrderedGroup' name='Data' /&gt;&lt;uia cls='NetUIChunk' name='Data Tools' /&gt;&lt;uia cls='NetUIRibbonButton' name='Consolidate...' /&gt;">
+                              <ui:Target.TimeoutMS>
+                                <InArgument x:TypeArguments="x:Int32" />
+                              </ui:Target.TimeoutMS>
+                              <ui:Target.WaitForReady>
+                                <InArgument x:TypeArguments="ui:WaitForReady" />
+                              </ui:Target.WaitForReady>
+                            </ui:Target>
+                          </ui:Click.Target>
+                        </ui:Click>
+                      </Sequence>
+                    </ActivityAction>
+                  </ui:WindowScope.Body>
+                </ui:WindowScope>
+                <ui:WindowScope ApplicationWindow="{x:Null}" SearchScope="{x:Null}" TimeoutMS="{x:Null}" Window="{x:Null}" DisplayName="Attach Window 'Consolida Bosa_sdm_'" sap:VirtualizedContainerService.HintSize="434,306" sap2010:WorkflowViewState.IdRef="WindowScope_23" Selector="&lt;wnd app='excel.exe' cls='bosa_sdm_XL9' title='Consolidate' /&gt;">
+                  <ui:WindowScope.Body>
+                    <ActivityAction x:TypeArguments="x:Object">
+                      <ActivityAction.Argument>
+                        <DelegateInArgument x:TypeArguments="x:Object" Name="ContextTarget" />
+                      </ActivityAction.Argument>
+                      <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="376,198" sap2010:WorkflowViewState.IdRef="Sequence_37">
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                        <ui:Click AlterIfDisabled="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click 'push button  OK'" sap:VirtualizedContainerService.HintSize="334,106" sap2010:WorkflowViewState.IdRef="Click_59" KeyModifiers="None" MouseButton="BTN_LEFT" SendWindowMessages="False" SimulateClick="False">
+                          <ui:Click.CursorPosition>
+                            <ui:CursorPosition OffsetX="19" OffsetY="12" Position="TopLeft" />
+                          </ui:Click.CursorPosition>
+                          <ui:Click.Target>
+                            <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="6a3e0113-62a5-4cf1-9dcc-eeb19ef79c73" InformativeScreenshot="309c4cb830ddaae24ce3c0002a9ebffe" Selector="&lt;ctrl name='OK' role='push button' /&gt;">
+                              <ui:Target.TimeoutMS>
+                                <InArgument x:TypeArguments="x:Int32" />
+                              </ui:Target.TimeoutMS>
+                              <ui:Target.WaitForReady>
+                                <InArgument x:TypeArguments="ui:WaitForReady" />
+                              </ui:Target.WaitForReady>
+                            </ui:Target>
+                          </ui:Click.Target>
+                        </ui:Click>
+                      </Sequence>
+                    </ActivityAction>
+                  </ui:WindowScope.Body>
+                </ui:WindowScope>
+              </Sequence>
+              <Sequence DisplayName="Desktop" sap:VirtualizedContainerService.HintSize="476,1604" sap2010:WorkflowViewState.IdRef="Sequence_40">
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+                <ui:WindowScope ApplicationWindow="{x:Null}" SearchScope="{x:Null}" TimeoutMS="{x:Null}" Window="{x:Null}" DisplayName="Attach Window 'P0sourced Xlmain'" sap:VirtualizedContainerService.HintSize="434,1512" sap2010:WorkflowViewState.IdRef="WindowScope_24" InformativeScreenshot="542a0bdb596ef50e552edffbdec4e9d1" Selector="&lt;wnd app='excel.exe' cls='XLMAIN' title='P0 source datasheet.xlsx - Excel' /&gt;">
+                  <ui:WindowScope.Body>
+                    <ActivityAction x:TypeArguments="x:Object">
+                      <ActivityAction.Argument>
+                        <DelegateInArgument x:TypeArguments="x:Object" Name="ContextTarget" />
+                      </ActivityAction.Argument>
+                      <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="376,1366" sap2010:WorkflowViewState.IdRef="Sequence_39">
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                        <ui:Click AlterIfDisabled="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click 'Sheet Tab  Sheet2'" sap:VirtualizedContainerService.HintSize="334,106" sap2010:WorkflowViewState.IdRef="Click_60" KeyModifiers="None" MouseButton="BTN_LEFT" SendWindowMessages="False" SimulateClick="False">
+                          <ui:Click.CursorPosition>
+                            <ui:CursorPosition OffsetX="18" OffsetY="18" Position="TopLeft" />
+                          </ui:Click.CursorPosition>
+                          <ui:Click.Target>
+                            <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="92182fc5-bc89-4096-89b7-8196473f90e2" InformativeScreenshot="044290afa6c9cad4e3dadfc0e878b69b" Selector="&lt;uia automationid='P0 source datasheet.xlsx' cls='ExcelBookTabControl' name='P0 source datasheet' /&gt;&lt;uia automationid='SheetTab' name='Sheet2' role='Sheet Tab' /&gt;">
+                              <ui:Target.TimeoutMS>
+                                <InArgument x:TypeArguments="x:Int32" />
+                              </ui:Target.TimeoutMS>
+                              <ui:Target.WaitForReady>
+                                <InArgument x:TypeArguments="ui:WaitForReady" />
+                              </ui:Target.WaitForReady>
+                            </ui:Target>
+                          </ui:Click.Target>
+                        </ui:Click>
+                        <ui:Click AlterIfDisabled="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click 'Tab Item  Home'" sap:VirtualizedContainerService.HintSize="334,106" sap2010:WorkflowViewState.IdRef="Click_61" KeyModifiers="None" MouseButton="BTN_LEFT" SendWindowMessages="False" SimulateClick="False">
+                          <ui:Click.CursorPosition>
+                            <ui:CursorPosition OffsetX="27" OffsetY="19" Position="TopLeft" />
+                          </ui:Click.CursorPosition>
+                          <ui:Click.Target>
+                            <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="0a567b8e-5b10-47f7-b931-f8aaab31c8fb" InformativeScreenshot="b644e07064959823d4ff744f0749f32d" Selector="&lt;uia cls='MsoCommandBar' helpText='Ribbon toolbar' /&gt;&lt;uia cls='NetUIPanViewer' name='Ribbon Tabs' /&gt;&lt;uia cls='NetUIRibbonTab' name='Home' /&gt;">
+                              <ui:Target.TimeoutMS>
+                                <InArgument x:TypeArguments="x:Int32" />
+                              </ui:Target.TimeoutMS>
+                              <ui:Target.WaitForReady>
+                                <InArgument x:TypeArguments="ui:WaitForReady" />
+                              </ui:Target.WaitForReady>
+                            </ui:Target>
+                          </ui:Click.Target>
+                        </ui:Click>
+                        <ui:Click AlterIfDisabled="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click 'Column Header  E'" sap:VirtualizedContainerService.HintSize="334,106" sap2010:WorkflowViewState.IdRef="Click_62" KeyModifiers="None" MouseButton="BTN_LEFT" SendWindowMessages="False" SimulateClick="False">
+                          <ui:Click.CursorPosition>
+                            <ui:CursorPosition OffsetX="33" OffsetY="8" Position="TopLeft" />
+                          </ui:Click.CursorPosition>
+                          <ui:Click.Target>
+                            <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="41662060-cf24-4148-a580-175ee0c4547a" InformativeScreenshot="7702166bc66272371b3fcd527997c00c" Selector="&lt;uia automationid='Grid' name='Grid' role='data grid' /&gt;&lt;uia name='E' role='Column Header' tableCol='5' tableRow='0' /&gt;">
+                              <ui:Target.TimeoutMS>
+                                <InArgument x:TypeArguments="x:Int32" />
+                              </ui:Target.TimeoutMS>
+                              <ui:Target.WaitForReady>
+                                <InArgument x:TypeArguments="ui:WaitForReady" />
+                              </ui:Target.WaitForReady>
+                            </ui:Target>
+                          </ui:Click.Target>
+                        </ui:Click>
+                        <ui:Click AlterIfDisabled="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click 'Button  Copy'" sap:VirtualizedContainerService.HintSize="334,106" sap2010:WorkflowViewState.IdRef="Click_63" KeyModifiers="None" MouseButton="BTN_LEFT" SendWindowMessages="False" SimulateClick="False">
+                          <ui:Click.CursorPosition>
+                            <ui:CursorPosition OffsetX="11" OffsetY="17" Position="TopLeft" />
+                          </ui:Click.CursorPosition>
+                          <ui:Click.Target>
+                            <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="655a2904-cabb-4669-bc4f-ce839326f8f3" InformativeScreenshot="579762f04d47b1f6db99fc6292a076a9" Selector="&lt;uia cls='MsoCommandBar' helpText='Ribbon toolbar' /&gt;&lt;uia cls='NetUIOrderedGroup' name='Home' /&gt;&lt;uia cls='NetUIChunk' name='Clipboard' /&gt;&lt;uia cls='NetUIRibbonButton' name='Copy' /&gt;">
+                              <ui:Target.TimeoutMS>
+                                <InArgument x:TypeArguments="x:Int32" />
+                              </ui:Target.TimeoutMS>
+                              <ui:Target.WaitForReady>
+                                <InArgument x:TypeArguments="ui:WaitForReady" />
+                              </ui:Target.WaitForReady>
+                            </ui:Target>
+                          </ui:Click.Target>
+                        </ui:Click>
+                        <ui:Click AlterIfDisabled="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click 'Tab Item  Data'" sap:VirtualizedContainerService.HintSize="334,106" sap2010:WorkflowViewState.IdRef="Click_64" KeyModifiers="None" MouseButton="BTN_LEFT" SendWindowMessages="False" SimulateClick="False">
+                          <ui:Click.CursorPosition>
+                            <ui:CursorPosition OffsetX="12" OffsetY="12" Position="TopLeft" />
+                          </ui:Click.CursorPosition>
+                          <ui:Click.Target>
+                            <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="0c669a89-7473-4e6d-8f09-a3f992e14cc6" InformativeScreenshot="2d5c669ff73440cc3edf9ff16118cbbb" Selector="&lt;uia cls='MsoCommandBar' helpText='Ribbon toolbar' /&gt;&lt;uia cls='NetUIPanViewer' name='Ribbon Tabs' /&gt;&lt;uia cls='NetUIRibbonTab' name='Data' /&gt;">
+                              <ui:Target.TimeoutMS>
+                                <InArgument x:TypeArguments="x:Int32" />
+                              </ui:Target.TimeoutMS>
+                              <ui:Target.WaitForReady>
+                                <InArgument x:TypeArguments="ui:WaitForReady" />
+                              </ui:Target.WaitForReady>
+                            </ui:Target>
+                          </ui:Click.Target>
+                        </ui:Click>
+                        <ui:Click AlterIfDisabled="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click 'Sheet Tab'" sap:VirtualizedContainerService.HintSize="334,106" sap2010:WorkflowViewState.IdRef="Click_65" KeyModifiers="None" MouseButton="BTN_LEFT" SendWindowMessages="False" SimulateClick="False">
+                          <ui:Click.CursorPosition>
+                            <ui:CursorPosition OffsetX="29" OffsetY="10" Position="TopLeft" />
+                          </ui:Click.CursorPosition>
+                          <ui:Click.Target>
+                            <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="82ef8557-df54-4f9c-aa47-7e1dab82de55" InformativeScreenshot="b78557eb0e409b42786d0b9d089c5fab" Selector="&lt;uia automationid='P0 source datasheet.xlsx' cls='ExcelBookTabControl' name='P0 source datasheet' /&gt;&lt;uia automationid='SheetTab' name='vendor_inventory' role='Sheet Tab' /&gt;">
+                              <ui:Target.TimeoutMS>
+                                <InArgument x:TypeArguments="x:Int32" />
+                              </ui:Target.TimeoutMS>
+                              <ui:Target.WaitForReady>
+                                <InArgument x:TypeArguments="ui:WaitForReady" />
+                              </ui:Target.WaitForReady>
+                            </ui:Target>
+                          </ui:Click.Target>
+                        </ui:Click>
+                        <ui:Click AlterIfDisabled="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click 'Column Header  E'" sap:VirtualizedContainerService.HintSize="334,106" sap2010:WorkflowViewState.IdRef="Click_66" KeyModifiers="None" MouseButton="BTN_LEFT" SendWindowMessages="False" SimulateClick="False">
+                          <ui:Click.CursorPosition>
+                            <ui:CursorPosition OffsetX="47" OffsetY="6" Position="TopLeft" />
+                          </ui:Click.CursorPosition>
+                          <ui:Click.Target>
+                            <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="be976e54-b170-4a81-8ab6-2752420e0886" InformativeScreenshot="4973b334317070f88b14d9f532012030" Selector="&lt;uia automationid='Grid' name='Grid' role='data grid' /&gt;&lt;uia name='E' role='Column Header' tableCol='5' tableRow='0' /&gt;">
+                              <ui:Target.TimeoutMS>
+                                <InArgument x:TypeArguments="x:Int32" />
+                              </ui:Target.TimeoutMS>
+                              <ui:Target.WaitForReady>
+                                <InArgument x:TypeArguments="ui:WaitForReady" />
+                              </ui:Target.WaitForReady>
+                            </ui:Target>
+                          </ui:Click.Target>
+                        </ui:Click>
+                        <ui:Click AlterIfDisabled="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click 'Tab Item  Home'" sap:VirtualizedContainerService.HintSize="334,106" sap2010:WorkflowViewState.IdRef="Click_67" KeyModifiers="None" MouseButton="BTN_LEFT" SendWindowMessages="False" SimulateClick="False">
+                          <ui:Click.CursorPosition>
+                            <ui:CursorPosition OffsetX="26" OffsetY="8" Position="TopLeft" />
+                          </ui:Click.CursorPosition>
+                          <ui:Click.Target>
+                            <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="ca172f19-a186-487b-8a9f-b6e1884a7176" InformativeScreenshot="b644e07064959823d4ff744f0749f32d" Selector="&lt;uia cls='MsoCommandBar' helpText='Ribbon toolbar' /&gt;&lt;uia cls='NetUIPanViewer' name='Ribbon Tabs' /&gt;&lt;uia cls='NetUIRibbonTab' name='Home' /&gt;">
+                              <ui:Target.TimeoutMS>
+                                <InArgument x:TypeArguments="x:Int32" />
+                              </ui:Target.TimeoutMS>
+                              <ui:Target.WaitForReady>
+                                <InArgument x:TypeArguments="ui:WaitForReady" />
+                              </ui:Target.WaitForReady>
+                            </ui:Target>
+                          </ui:Click.Target>
+                        </ui:Click>
+                        <ui:Click AlterIfDisabled="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click 'Button  Paste'" sap:VirtualizedContainerService.HintSize="334,106" sap2010:WorkflowViewState.IdRef="Click_68" KeyModifiers="None" MouseButton="BTN_LEFT" SendWindowMessages="False" SimulateClick="False">
+                          <ui:Click.CursorPosition>
+                            <ui:CursorPosition OffsetX="27" OffsetY="29" Position="TopLeft" />
+                          </ui:Click.CursorPosition>
+                          <ui:Click.Target>
+                            <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="81dc3bec-e194-4b37-8baa-36d7320e089a" InformativeScreenshot="6eeff0c2a77bebd7550c44dcff2dbb9b" Selector="&lt;uia cls='MsoCommandBar' helpText='Ribbon toolbar' /&gt;&lt;uia cls='NetUIOrderedGroup' name='Home' /&gt;&lt;uia cls='NetUIChunk' name='Clipboard' /&gt;&lt;uia cls='NetUIRibbonButton' name='Paste' /&gt;">
+                              <ui:Target.TimeoutMS>
+                                <InArgument x:TypeArguments="x:Int32" />
+                              </ui:Target.TimeoutMS>
+                              <ui:Target.WaitForReady>
+                                <InArgument x:TypeArguments="ui:WaitForReady" />
+                              </ui:Target.WaitForReady>
+                            </ui:Target>
+                          </ui:Click.Target>
+                        </ui:Click>
+                      </Sequence>
+                    </ActivityAction>
+                  </ui:WindowScope.Body>
+                </ui:WindowScope>
+              </Sequence>
+            </Sequence>
           </Sequence>
         </ActivityAction>
       </ui:ExcelApplicationScope.Body>
