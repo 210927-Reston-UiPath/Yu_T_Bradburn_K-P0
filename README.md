@@ -4,7 +4,7 @@ Update as of 10/13/2021
 
 Robot adds a vendor as long as the information given to the robot in an Excel sheet matches a specific format. Our rationale being if this is for a store or webpage that information could be translated from HTML easily.
 
-Excel sheet format for vendors (vendor_inventory sheet):
+Excel sheet format for vendors (vendor_inventory sheet and individual vendor sheets):
 
 | Vendor | Item | Item Cost | Item Discount | Item Count |
 | ------ | ---- | --------- | ------------- | ---------- |
